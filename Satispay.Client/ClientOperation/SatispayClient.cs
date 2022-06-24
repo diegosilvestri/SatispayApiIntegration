@@ -85,15 +85,9 @@ namespace Satispay.Client.ClientOperation
 
 			var response = await _httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
 
-			string contentResponse = await response.Content.ReadAsStringAsync();
+
 			return await BuildResponse<T>(response);
-			//await Utility.ThrowErrorIfAnyAsync(response);
 
-			//var responseBody = await response.Content.ReadAsStringAsync();
-
-			//return responseBody?.Length > 0
-			//	? JsonSerializer.Deserialize<T>(responseBody)
-			//	: default;
 		}
 
 
