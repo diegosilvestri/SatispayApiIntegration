@@ -33,7 +33,7 @@ namespace Satispay.Client.Interface
 		{
 			var request = new KeyIdRequest() { PublicKey = publicKey, Token = token };
 
-			var result = await Client.PostAsJsonAsync("g_business/v1/authentication_keys", request, cancellationToken);
+			var result = await Client.PostAsJsonAsync("v1/authentication_keys", request, cancellationToken);
 
 			return await BuildResponse<KeyIdResponse>(result);
 			//await Utility.ThrowErrorIfAnyAsync(result);
